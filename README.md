@@ -66,3 +66,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-author]: https://github.com/lembarek
 [link-contributors]: ../../contributors
 # role
+# core
