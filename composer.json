@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lembarek\\core\\": "src"
+            "Lembarek\\Core\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lembarek\\core\\Test\\": "tests"
+            "Lembarek\\Core\\Test\\": "tests"
         }
     },
     "scripts": {

@@ -1,4 +1,4 @@
-<?php namespace Lembarek\Core;
+<?php namespace Lembarek\Core\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
