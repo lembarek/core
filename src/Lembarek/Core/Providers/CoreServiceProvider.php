@@ -12,7 +12,7 @@ class CoreServiceProvider extends ServiceProvider
     public function boot()
     {
           $this->publishes([
-                __DIR__.'/views/layout' => base_path('resources/views/')
+                __DIR__.'/../views' => base_path('resources/views/')
           ], 'views');
 
     }
