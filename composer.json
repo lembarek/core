@@ -12,7 +12,7 @@
             "name": "benghezala lembarek",
             "email": "lembarek2011@gmail.com",
             "homepage": "https://github.com/lembarek",
-            "core": "Developer"
+            "role": "Developer"
         }
     ],
     "require": {
