@@ -1,6 +1,6 @@
 <?php namespace Lembarek\Core\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Lembarek\Core\Providers\ServiceProvider;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -11,15 +11,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        if (! $this->app->routesAreCached()) {
-              require __DIR__.'/../routes.php';
-        }
-
-        $this->publishes([
-                __DIR__.'/../views' => base_path('resources/views/')
-        ], 'views');
-
+        $this->fullBoot('core', __DIR__.'/../');
     }
 
     /**
