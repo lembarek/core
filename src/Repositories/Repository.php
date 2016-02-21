@@ -1,4 +1,6 @@
-<?php namespace Lembarek\Core\Repositories;
+<?php
+
+ namespace Lembarek\Core\Repositories;
 class Repository
 {
     /**
@@ -9,8 +11,8 @@ class Repository
      */
     public function create($inputs)
     {
-        $user = $this->model->create($inputs);
-        $user->save();
-        return $user;
+        $record = $this->model->create($inputs);
+        $record->save();
+        return $record;
     }
 }

@@ -1,4 +1,6 @@
-<?php namespace Lembarek\Core\Models;
+<?php
+
+ namespace Lembarek\Core\Models;
 
 use Illuminate\Database\Eloquent\Model as MainModel;
 

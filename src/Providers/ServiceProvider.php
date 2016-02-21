@@ -1,4 +1,6 @@
-<?php namespace Lembarek\Core\Providers;
+<?php
+
+ namespace Lembarek\Core\Providers;
 
 use Illuminate\Support\ServiceProvider as MainServiceProvider;
 

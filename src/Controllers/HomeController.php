@@ -1,4 +1,6 @@
-<?php namespace Lembarek\Core\Controllers;
+<?php
+
+ namespace Lembarek\Core\Controllers;
 
 use App\Http\Controllers\Controller;
 
