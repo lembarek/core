@@ -1,8 +1,11 @@
 <?php
 
  namespace Lembarek\Core\Repositories;
-class Repository
+
+use Auth;
+abstract class Repository
 {
+
     /**
      * create a new record
      *
@@ -14,5 +17,35 @@ class Repository
         $record = $this->model->create($inputs);
         $record->save();
         return $record;
+    }
+
+
+    /**
+     * get all records in database
+     *
+     * @param  integer  $limit
+     * @return Model
+     */
+    public function all($limit=null)
+    {
+        if($limit) return $this->model->all()->limit($limit)->get();
+
+        return $this->model->all();
+    }
+
+
+    /**
+     * get the columns for a users
+     *
+     * @param  int  $user
+     * @return Model
+     */
+    public function getForUser($user_id=null)
+    {
+        if($user_id) return $this->model->whereUserId($user_id)->get();
+
+        if(Auth::user()) return $this->model->whereUserId(Auth::user()->id)->first()->toArray();
+
+        return null;
     }
 }
