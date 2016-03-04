@@ -3,6 +3,7 @@
  namespace Lembarek\Core\Repositories;
 
 use Auth;
+
 abstract class Repository
 {
 
@@ -26,9 +27,11 @@ abstract class Repository
      * @param  integer  $limit
      * @return Model
      */
-    public function all($limit=null)
+    public function all($limit = null)
     {
-        if($limit) return $this->model->all()->limit($limit)->get();
+        if ($limit) {
+            return $this->model->all()->limit($limit)->get();
+        }
 
         return $this->model->all();
     }
@@ -40,12 +43,28 @@ abstract class Repository
      * @param  int  $user
      * @return Model
      */
-    public function getForUser($user_id=null)
+    public function getForUser($user_id = null)
     {
-        if($user_id) return $this->model->whereUserId($user_id)->get();
+        if ($user_id) {
+            return $this->model->whereUserId($user_id)->get();
+        }
 
-        if(Auth::user()) return $this->model->whereUserId(Auth::user()->id)->first()->toArray();
+        if (Auth::user()) {
+            return $this->model->whereUserId(Auth::user()->id)->first()->toArray();
+        }
 
         return null;
+    }
+
+    /**
+     * try to simulate the where of Eloquent
+     *
+     * @param  string  $key
+     * @param  string  $value
+     * @return this
+     */
+    public function where($key, $value)
+    {
+        return $this->model->where($key, $value);
     }
 }
