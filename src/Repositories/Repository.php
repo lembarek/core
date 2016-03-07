@@ -46,7 +46,7 @@ abstract class Repository
     public function getForUser($user_id = null)
     {
         if ($user_id) {
-            return $this->model->whereUserId($user_id)->get();
+            return $this->model->whereUserId($user_id)->get()->first()->toArray();
         }
 
         if (Auth::user()) {
@@ -55,6 +55,7 @@ abstract class Repository
 
         return null;
     }
+
 
     /**
      * try to simulate the where of Eloquent
@@ -67,4 +68,5 @@ abstract class Repository
     {
         return $this->model->where($key, $value);
     }
+
 }
