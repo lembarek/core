@@ -42,5 +42,11 @@ abstract class ServiceProvider extends MainServiceProvider
             ]);
         }
 
+        if (file_exists($dir.'/assets')) {
+            $this->publishes([
+                $dir.'/assets' => base_path('resources/assets'),
+            ]);
+        }
+
     }
 }

@@ -2,19 +2,19 @@
 <html>
 <head>
 
-    @include('layout.partials.header')
+    @include('core::layout.partials.header')
 
 </head>
 
 <body>
 <div class="container">
-    @include('layout.partials.navigation')
+    @include('core::layout.partials.navigation')
 
-    @include('layout.partials.flash')
+    @include('core::layout.partials.flash')
 
     @yield('content')
 
-    @include('layout.partials.footer')
+    @include('core::layout.partials.footer')
 </div>
 
 </body>
