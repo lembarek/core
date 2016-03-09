@@ -3,7 +3,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', [
-    'as' => 'home',
+    'as' => 'core:home',
     'uses' => 'Lembarek\Core\Controllers\HomeController@home',
     ]);
 });
