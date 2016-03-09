@@ -68,5 +68,4 @@ abstract class Repository
     {
         return $this->model->where($key, $value);
     }
-
 }

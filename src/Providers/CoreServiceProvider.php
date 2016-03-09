@@ -16,7 +16,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->fullBoot('core', __DIR__.'/../');
 
 
-   }
+    }
 
     /**
      * Register any package services.
