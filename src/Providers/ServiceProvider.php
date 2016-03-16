@@ -36,6 +36,12 @@ abstract class ServiceProvider extends MainServiceProvider
             ], 'migrations');
         }
 
+        if (file_exists($dir.'/seeds')) {
+            $this->publishes([
+                $dir.'/seeds' => base_path('database/seeds/')
+            ], 'seeds');
+        }
+
         if (file_exists($dir.'/config')) {
             $this->publishes([
                 $dir.'/config' => config_path()."/vendor/$package",
