@@ -1,9 +1,9 @@
 <?php
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['as' => 'core::', 'middleware' => ['web']], function () {
 
     Route::get('/', [
-    'as' => 'core:home',
+    'as' => 'home',
     'uses' => 'Lembarek\Core\Controllers\HomeController@home',
     ]);
 });
