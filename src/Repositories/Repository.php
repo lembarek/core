@@ -36,6 +36,23 @@ abstract class Repository
         return $this->model->all();
     }
 
+    /**
+     * get all records in database with withs
+     *
+     * @param  string   $with
+     * @param  integer  $limit
+     * @return void
+     */
+    public function allWith($with, $limit = null)
+    {
+        if ($limit) {
+            return $this->model->with($with)->limit($limit)->get();
+        }
+
+        return $this->model->with($with)->get();
+
+    }
+
 
     /**
      * get the columns for a users
