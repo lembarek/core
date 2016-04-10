@@ -1,0 +1,9 @@
+@mixin app_to_ie6{
+     @content;
+}
+
+@include app_to_ie6{
+    h1{
+        font: red;
+    }
+}

@@ -46,12 +46,31 @@ abstract class ServiceProvider extends MainServiceProvider
             $this->publishes([
                 $dir.'/config' => config_path()."/vendor/$package",
             ]);
+
+            //$this->mergeConfigFrom(
+                //$dir."/config",
+                //$package
+             //);
+
         }
+
+        if (file_exists($dir.'/lang')) {
+
+            $this->publishes([
+                $dir.'/lang' => resource_path()."/lang/vendor/$package",
+            ]);
+
+            $this->loagTranslationFrom(
+                $dir."/lang/",
+                $package
+             );
+        }
+
 
         if (file_exists($dir.'/assets')) {
             $this->publishes([
                 $dir.'/assets' => base_path('resources/assets'),
-            ]);
+            ], 'assets');
         }
 
     }
