@@ -15,6 +15,8 @@
     @yield('content')
 
     @include('core::layout.partials.footer')
+
+    @yield('script')
 </div>
 
 </body>

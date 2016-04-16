@@ -90,3 +90,26 @@ function get_values_for_enum_type($table, $column)
 {
 
 }
+
+function  getStatistics(Array $arr,Array $columns)
+{
+    $result = [];
+    foreach($columns as $column){
+        $results[$column] = getStatisticsForColumn($arr, $column);
+    }
+    return $results;
+}
+
+function getStatisticsForColumn(Array $arr, $column){
+    $results = [];
+    foreach($arr as $element){
+        $key= $element[$column];
+        if(is_array($key)) $key = array_pop($key);
+        if(!array_key_exists($key, $results))
+            $results[$key] = 1;
+        else
+            $results[$key] = ++$results[$key];
+    }
+    return $results;
+}
+

@@ -7,7 +7,6 @@ class Countries
   //public static $CountriesLongAndShortNames =   array_combine;
 
     public static $CountriesLongNames =  [
-    "united states",
     "afghanistan",
     "albania",
     "algeria",
@@ -248,7 +247,6 @@ class Countries
     "zimbabwe",
     ];
     public static $CountriesShortNames =  [
-    "us",
     "af",
     "al",
     "dz",

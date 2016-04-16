@@ -1,9 +1,5 @@
-@mixin app_to_ie6{
-     @content;
+@import 'bootstrap.scss';
+body {
+    padding-top: 70px;
 }
 
-@include app_to_ie6{
-    h1{
-        font: red;
-    }
-}

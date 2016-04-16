@@ -60,8 +60,8 @@ abstract class ServiceProvider extends MainServiceProvider
                 $dir.'/lang' => resource_path()."/lang/vendor/$package",
             ]);
 
-            $this->loagTranslationFrom(
-                $dir."/lang/",
+            $this->loadTranslationsFrom(
+                $dir."/lang",
                 $package
              );
         }
