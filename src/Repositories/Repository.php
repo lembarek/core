@@ -85,4 +85,15 @@ abstract class Repository
     {
         return $this->model->where($key, $value);
     }
+
+    /**
+     * get by slug
+     *
+     * @param  string  $slug
+     * @return Model
+     */
+    public function getBySlug($slug)
+    {
+       return $this->model->where('slug', $slug)->first();
+    }
 }
