@@ -30,7 +30,7 @@ abstract class Repository
     public function all($limit = null)
     {
         if ($limit) {
-            return $this->model->all()->limit($limit)->get();
+            return $this->model->limit($limit)->get();
         }
 
         return $this->model->all();
@@ -95,5 +95,15 @@ abstract class Repository
     public function getBySlug($slug)
     {
        return $this->model->where('slug', $slug)->first();
+    }
+
+    /**
+     * get model
+     *
+     * @return Model
+     */
+    public function model()
+    {
+        return $this->model;
     }
 }
