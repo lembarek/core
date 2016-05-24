@@ -20,13 +20,7 @@ abstract class ServiceProvider extends MainServiceProvider
             }
         }
 
-        if (file_exists("$dir/config/$package.php")) {
-            $this->mergeConfigFrom(
-                "$dir/config/$package.php",
-                "$package"
-            );
-        }
-        if (file_exists($dir.'/views')) {
+       if (file_exists($dir.'/views')) {
             $this->loadViewsFrom($dir.'/views', $package);
         }
 
@@ -42,16 +36,11 @@ abstract class ServiceProvider extends MainServiceProvider
             ], 'seeds');
         }
 
-        if (file_exists($dir.'/config')) {
-            $this->publishes([
-                $dir.'/config' => config_path()."/vendor/$package",
-            ]);
-
-            //$this->mergeConfigFrom(
-                //$dir."/config",
-                //$package
-             //);
-
+        if (file_exists($dir."config/$package.php")) {
+                $this->mergeConfigFrom(
+                    $dir."config/$package.php",
+                    $package
+             );
         }
 
         if (file_exists($dir.'/lang')) {
