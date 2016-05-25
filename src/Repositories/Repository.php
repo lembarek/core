@@ -36,6 +36,7 @@ abstract class Repository
         return $this->model->all();
     }
 
+
     /**
      * get all records in database with withs
      *
@@ -81,10 +82,15 @@ abstract class Repository
      * @param  string  $value
      * @return this
      */
-    public function where($key, $value)
+    public function where($key, $value=null)
     {
-        return $this->model->where($key, $value);
+        if($value)
+            return $this->model->where($key, $value);
+        if(is_array($key))
+            return $this->model->where($key);
+        return null;
     }
+
 
     /**
      * get by slug
@@ -97,6 +103,7 @@ abstract class Repository
        return $this->model->where('slug', $slug)->first();
     }
 
+
     /**
      * get model
      *
@@ -106,4 +113,5 @@ abstract class Repository
     {
         return $this->model;
     }
+
 }
