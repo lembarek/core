@@ -26,7 +26,7 @@ function replaceAndSave($oldFile, $search, $replace, $newFile = null)
 */
 function initGit($path)
 {
-    system("cd $path && git init && git add . && git commit -m 'first init'");
+    shell_exec("cd $path && git init && git add . && git commit -m 'first init'");
 }
 
 /**
