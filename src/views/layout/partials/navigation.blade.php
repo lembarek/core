@@ -11,9 +11,9 @@
     </div>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">{{ trans('site.link1') }}</a></li>
-            <li><a href="#about">{{ trans('site.link2') }}</a></li>
-            <li><a href="#contact">{{ trans('site.link3') }}</a></li>
+            @foreach(trans('core::navigation.links') as $link)
+                <li><a href="{{ $link['url'] }}">{{ $link['name']  }}</a></li>
+            @endforeach
         </ul>
     </div><!--/.nav-collapse -->
     </div>
