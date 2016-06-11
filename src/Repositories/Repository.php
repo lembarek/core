@@ -114,4 +114,16 @@ abstract class Repository
         return $this->model;
     }
 
+
+    /**
+     * find a first record
+     *
+     * @param  integer  $id
+     * @return Model
+     */
+    public function find($id)
+    {
+        return $this->model->find($id);
+    }
+
 }
