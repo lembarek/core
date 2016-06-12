@@ -29,6 +29,7 @@ function initGit($path)
     shell_exec("cd $path && git init && git add . && git commit -m 'first init'");
 }
 
+
 /**
 * delete dir
 *
@@ -41,6 +42,7 @@ function deleteDir($dir)
         return exec("rm -R $dir");
     }
 }
+
 
 function get_subdir_files($main_dir)
 {
@@ -59,6 +61,7 @@ function get_subdir_files($main_dir)
     return $result;
 }
 
+
 function get_subdir_dirs($main_dir)
 {
     $dirs = scandir($main_dir);
@@ -76,6 +79,7 @@ function get_subdir_dirs($main_dir)
     return $result;
 }
 
+
 function get_column_type($table, $column)
 {
     try {
@@ -86,10 +90,12 @@ function get_column_type($table, $column)
         return $type;
 }
 
+
 function get_values_for_enum_type($table, $column)
 {
 
 }
+
 
 function  getStatistics(Array $arr,Array $columns)
 {
@@ -99,6 +105,7 @@ function  getStatistics(Array $arr,Array $columns)
     }
     return $results;
 }
+
 
 function getStatisticsForColumn(Array $arr, $column){
     $results = [];
