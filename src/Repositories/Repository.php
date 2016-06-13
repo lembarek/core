@@ -29,7 +29,7 @@ abstract class Repository
      */
     public function all($limit = null)
     {
-        if ($limit) {
+        if($limit){
             return $this->model->limit($limit)->get();
         }
 
@@ -67,9 +67,10 @@ abstract class Repository
             return $this->model->whereUserId($user_id)->get()->first()->toArray();
         }
 
-        if (Auth::user()) {
-            return $this->model->whereUserId(Auth::user()->id)->first()->toArray();
+        if(auth()->user()){
+            return $this->model->whereUserId(auth()->user()->id)->first()->toArray();
         }
+
 
         return null;
     }
