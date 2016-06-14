@@ -83,17 +83,10 @@ function get_subdir_dirs($main_dir)
 function get_column_type($table, $column)
 {
     try {
-        $type = \DB::connection()->getDoctrineColumn('profiles', 'sex')->getType()->getName();
+        return \DB::connection()->getDoctrineColumn($table, $column)->getType()->getName();
     } catch (Doctrine\DBAL\DBALException $e) {
         return 'enum';
     }
-        return $type;
-}
-
-
-function get_values_for_enum_type($table, $column)
-{
-
 }
 
 
@@ -107,7 +100,8 @@ function  getStatistics(Array $arr,Array $columns)
 }
 
 
-function getStatisticsForColumn(Array $arr, $column){
+function getStatisticsForColumn(Array $arr, $column)
+{
     $results = [];
     foreach($arr as $element){
         $key= $element[$column];
