@@ -6,7 +6,6 @@ use Auth;
 
 abstract class Repository
 {
-
     /**
      * create a new record
      *
@@ -19,7 +18,6 @@ abstract class Repository
         $record->save();
         return $record;
     }
-
 
     /**
      * get all records in database
@@ -35,7 +33,6 @@ abstract class Repository
 
         return $this->model->all();
     }
-
 
     /**
      * get all records in database with withs
@@ -53,7 +50,6 @@ abstract class Repository
         return $this->model->with($with)->get();
 
     }
-
 
     /**
      * get the columns for a users
@@ -75,7 +71,6 @@ abstract class Repository
         return null;
     }
 
-
     /**
      * try to simulate the where of Eloquent
      *
@@ -92,7 +87,6 @@ abstract class Repository
         return null;
     }
 
-
     /**
      * get by slug
      *
@@ -104,7 +98,6 @@ abstract class Repository
        return $this->model->where('slug', $slug)->first();
     }
 
-
     /**
      * get model
      *
@@ -115,7 +108,6 @@ abstract class Repository
         return $this->model;
     }
 
-
     /**
      * find a first record
      *
@@ -125,6 +117,18 @@ abstract class Repository
     public function find($id)
     {
         return $this->model->find($id);
+    }
+
+    /**
+     * find the first record by
+     *
+     * @param  string  $by
+     * @param  mix   $value
+     * @return Model
+     */
+    public function findBy($by, $value)
+    {
+        return $this->where($by, $value)->first();
     }
 
 }
