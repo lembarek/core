@@ -15,6 +15,14 @@
                 <li><a href="{{ $link['url'] }}">{{ $link['name']  }}</a></li>
             @endforeach
         </ul>
+         <ul class="nav navbar-nav navbar-right">
+            @if (Auth::guest())
+                <li><a href="{{ route('auth::login') }}">{{ trans('core::general.login') }}</a></li>
+                <li><a href="{{ route('auth::register') }}">{{ trans('core::general.register') }}</a></li>
+            @else
+                <li><a href="{{ route('auth::logout') }}">{{ trans('core::general.logout') }}</a></li>
+            @endif
+        </ul>
     </div><!--/.nav-collapse -->
     </div>
 </div>

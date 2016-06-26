@@ -6,4 +6,7 @@ return [
     'password' => 'Password',
     'password_confirmation' => "Password Confirmation",
     'email' => 'Email',
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'register' => 'register',
 ];
