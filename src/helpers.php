@@ -18,7 +18,6 @@ function replaceAndSave($oldFile, $search, $replace, $newFile = null)
     file_put_contents($newFile, $replacing);
 }
 
-
 /**
     * init git
     *
@@ -28,7 +27,6 @@ function initGit($path)
 {
     shell_exec("cd $path && git init && git add . && git commit -m 'first init'");
 }
-
 
 /**
 * delete dir
@@ -42,7 +40,6 @@ function deleteDir($dir)
         return exec("rm -R $dir");
     }
 }
-
 
 function get_subdir_files($main_dir)
 {
@@ -61,7 +58,6 @@ function get_subdir_files($main_dir)
     return $result;
 }
 
-
 function get_subdir_dirs($main_dir)
 {
     $dirs = scandir($main_dir);
@@ -79,7 +75,6 @@ function get_subdir_dirs($main_dir)
     return $result;
 }
 
-
 function get_column_type($table, $column)
 {
     try {
@@ -89,7 +84,6 @@ function get_column_type($table, $column)
     }
 }
 
-
 function  getStatistics(Array $arr,Array $columns)
 {
     $result = [];
@@ -98,7 +92,6 @@ function  getStatistics(Array $arr,Array $columns)
     }
     return $results;
 }
-
 
 function getStatisticsForColumn(Array $arr, $column)
 {
@@ -114,3 +107,22 @@ function getStatisticsForColumn(Array $arr, $column)
     return $results;
 }
 
+/**
+ * Return sizes readable by humans
+ */
+function human_filesize($bytes, $decimals = 2)
+{
+  $size = ['B', 'kB', 'MB', 'GB', 'TB', 'PB'];
+  $factor = floor((strlen($bytes) - 1) / 3);
+
+  return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) .
+      @$size[$factor];
+}
+
+/**
+ * Is the mime type an image
+ */
+function is_image($mimeType)
+{
+    return starts_with($mimeType, 'image/');
+}
