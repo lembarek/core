@@ -131,4 +131,17 @@ abstract class Repository
         return $this->where($by, $value)->first();
     }
 
+    /**
+     * return paginate
+     *
+     * @param  integer $paginate
+     * @return Model
+     */
+    public function paginate($paginate = null)
+    {
+        $p = $paginate? : config('admin.paginate');
+
+        return $this->model->paginate($p);
+    }
+
 }
