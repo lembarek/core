@@ -144,4 +144,32 @@ abstract class Repository
         return $this->model->paginate($p);
     }
 
+    /**
+     * orderBy
+     *
+     * @param  string  $orderby
+     * @return Model
+     */
+    public function orderBy($orderBy, $direction='asc')
+    {
+        if($direction == 'desc')
+            return $this->model->orderBy($orderBy, 'desc');
+        else
+            return $this->model->orderBy($orderBy, 'asc');
+    }
+
+    /**
+     * get a record paginated and ordered
+     *
+     * @return Model
+     */
+    public function getPaginatedAndOrdered()
+    {
+        $direction = request()->get('direction');
+        $orderBy = request()->get('orderby');
+        if($orderBy)
+            return $this->orderBy($orderBy, $direction)->paginate();
+        return $this->paginate();
+    }
+
 }
