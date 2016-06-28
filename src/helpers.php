@@ -126,3 +126,29 @@ function is_image($mimeType)
 {
     return starts_with($mimeType, 'image/');
 }
+
+/**
+ * inverse direction
+ *
+ * @param  string  $direction
+ * @return string
+ */
+function inverse_direction($direction)
+{
+    if($direction == 'desc')
+        return 'asc';
+    return 'desc';
+}
+
+/**
+ * return url
+ *
+ * @param  string  $route
+ * @param  string  $orderby
+ * @param  string  $direction
+ * @return string
+ */
+function routeWithOrderBy($route, $orderby, $direction)
+{
+    return route($route).'?orderby='.$orderby.'&direction='.inverse_direction($direction);
+}
