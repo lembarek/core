@@ -16,4 +16,6 @@ return [
     "meta_description" => 'meta description',
     "layout" => "layout",
     "reverse_direction" => "reverse direction",
+    "update" => "update",
+    "delete" => "delete",
 ];
