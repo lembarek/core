@@ -153,6 +153,11 @@ class Role
         "edit-taggables" => "Edit taggables",
         "destroy-taggables" => "Destroy taggables",
         "none-taggables" => "None taggables",
+        "read-posts" => "Read posts",
+        "create-posts" => "Create posts",
+        "edit-posts" => "Edit posts",
+        "destroy-posts" => "Destroy posts",
+        "none-posts" => "None posts",
     ];
 
 }
