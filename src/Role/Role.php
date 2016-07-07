@@ -59,11 +59,11 @@ class Role
             "edit-permissions" => "Edit permissions",
             "destroy-permissions" => "Destroy permissions",
             "none-permissions" => "None permissions",
-            "read-user" => "Read user",
-            "create-user" => "Create user",
-            "edit-user" => "Edit user",
-            "destroy-user" => "Destroy user",
-            "none-user" => "None user",
+            "read-users" => "Read users",
+            "create-users" => "Create users",
+            "edit-users" => "Edit users",
+            "destroy-users" => "Destroy users",
+            "none-users" => "None users",
         ];
 
 
