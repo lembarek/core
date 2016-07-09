@@ -25,6 +25,9 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'Lembarek\Core\Repositories\CategoryRepositoryInterface',
+            'Lembarek\Core\Repositories\CategoryRepository'
+        );
     }
 }
