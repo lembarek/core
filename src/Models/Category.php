@@ -19,4 +19,14 @@ class Category extends Model
     }
   }
 
+   /**
+    * return children of this category
+    *
+    * @return Category
+    */
+   public function childrenCategories()
+   {
+        return $this->whereParent($this->id)->get();
+   }
+
 }
