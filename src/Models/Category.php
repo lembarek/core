@@ -3,11 +3,10 @@
 namespace Lembarek\Core\Models;
 
 use App\Traits\Categoriable;
+use Lembarek\Blog\Models\Post;
 
 class Category extends Model
 {
-  use Categoriable;
-
   protected $fillable = ['name', 'slug', 'description', 'parent', 'model'];
 
   public function setNameAttribute($value)
@@ -29,4 +28,13 @@ class Category extends Model
         return $this->whereParent($this->id)->get();
    }
 
+    /**
+     * it return all posts belong to this catogories
+     *
+     * @return Post
+     */
+    public function posts()
+    {
+        return Post::where('category_id', $this->id)->get();
+    }
 }
