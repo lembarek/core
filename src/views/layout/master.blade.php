@@ -4,6 +4,7 @@
 
     @include('core::layout.partials.header')
 
+    @yield('head_script')
 </head>
 
 <body>
