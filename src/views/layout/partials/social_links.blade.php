@@ -2,7 +2,7 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <ul class="list-inline text-center ">
           <li>
-            <a href="{{ url('rss') }}" data-toggle="tooltip"
+            <a href="{{ route('blog::rss') }}" data-toggle="tooltip"
                title="RSS feed">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
