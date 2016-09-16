@@ -37,7 +37,7 @@ function initGit($path)
 function deleteDir($dir)
 {
     if (file_exists($dir)) {
-        return exec("rm -R $dir");
+        return exec("rm -fR $dir");
     }
 }
 
