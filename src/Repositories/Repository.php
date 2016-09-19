@@ -167,8 +167,11 @@ abstract class Repository
     {
         $direction = request()->get('direction');
         $orderBy = request()->get('orderby');
+
+        $p = config('admin.paginate');
+
         if($orderBy)
-            return $this->orderBy($orderBy, $direction)->paginate();
+            return $this->orderBy($orderBy, $direction)->paginate($p);
         return $this->paginate();
     }
 
