@@ -152,3 +152,10 @@ function routeWithOrderBy($route, $orderby, $direction)
 {
     return route($route).'?orderby='.$orderby.'&direction='.inverse_direction($direction);
 }
+
+
+
+function recurse_copy($source, $dest)
+{
+      return exec("cp -R $source $dest ");
+}
