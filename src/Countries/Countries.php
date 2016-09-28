@@ -238,7 +238,6 @@ class Countries
     "venezuela",
     "vietnam",
     "virgin islands",
-    "virgin islands",
     "wallis and futuna islands",
     "western sahara",
     "yemen",
