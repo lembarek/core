@@ -57,7 +57,7 @@ abstract class Rss
       ->title($this->title())
       ->description($this->description())
       ->url(url('/'))
-      ->language($this->lang())
+      ->language($this->getLang())
       ->copyright('Copyright (c) '.$this->author())
       ->lastBuildDate($now->timestamp)
       ->appendTo($feed);
@@ -66,11 +66,8 @@ abstract class Rss
 
     foreach ($its as $it) {
       $item = new Item();
-      $item
-        ->title($it->title)
-        ->url($this->url($it))
-        ->pubDate($it->published_at->timestamp)
-        ->guid($this->getuid($it), true)
+      $item = $this->format($item, $it);
+      $item->guid($this->getuid($it), true)
         ->appendTo($channel);
     }
 
@@ -130,5 +127,7 @@ abstract class Rss
     abstract protected function  url($post);
 
     abstract protected function getuid($post);
+
+    abstract protected function format($item, $it);
 
 }
