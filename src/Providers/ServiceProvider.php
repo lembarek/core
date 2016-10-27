@@ -41,6 +41,10 @@ abstract class ServiceProvider extends MainServiceProvider
                     $dir."config/$package.php",
                     $package
              );
+
+                $this->publishes([
+                     $dir.'/config' => base_path('config')
+                    ], 'config');
         }
 
         if (file_exists($dir.'/lang')) {
