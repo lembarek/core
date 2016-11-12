@@ -175,4 +175,16 @@ abstract class Repository
         return $this->paginate();
     }
 
+    /**
+     * get recents
+     *
+     * @param  integer  $limit
+     * @return Post
+     */
+    public function recents($limit=20)
+    {
+        return $this->model->orderBy('created_at', 'DESC')->limit($limit)->get();
+    }
+
+
 }
