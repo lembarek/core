@@ -2,8 +2,6 @@
 
  namespace Lembarek\Core\Repositories;
 
-use Auth;
-
 abstract class Repository
 {
     /**
