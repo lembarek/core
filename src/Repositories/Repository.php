@@ -185,4 +185,20 @@ abstract class Repository
     }
 
 
+     /**
+      * update the status of the model
+      *
+      * @param  integer  $id
+      * @param  string   $key
+      * @param  string   $value
+      * @return Model
+      */
+     public function update($id, $key, $value)
+     {
+         $model =  $this->model->find($id);
+         $model->{$key}= $value;
+         $model->save();
+     }
+
+
 }
