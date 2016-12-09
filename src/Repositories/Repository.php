@@ -184,7 +184,6 @@ abstract class Repository
         return $this->model->orderBy('created_at', 'DESC')->limit($limit)->get();
     }
 
-
      /**
       * update the status of the model
       *
@@ -199,6 +198,17 @@ abstract class Repository
          $model->{$key}= $value;
          $model->save();
      }
+
+    /**
+     * first or create the model
+     *
+     * @param  array  $inputs
+     * @return Model
+     */
+    public function firstOrCreate($inputs)
+    {
+        return $this->model->firstOrCreate($inputs);
+    }
 
 
 }
