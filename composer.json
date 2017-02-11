@@ -31,7 +31,8 @@
             "Lembarek\\Core\\": "src"
         },
         "files":[
-            "src/helpers.php"
+            "src/helpers.php",
+            "src/testing/helpers.php"
         ]
     },
     "autoload-dev": {
