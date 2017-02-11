@@ -66,5 +66,10 @@ abstract class ServiceProvider extends MainServiceProvider
             ], 'assets');
         }
 
+
+        if(file_exists($dir.'/factories/ModelFactory.php')){
+            require($dir.'/factories/ModelFactory.php');
+        }
+
     }
 }
