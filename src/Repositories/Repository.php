@@ -192,10 +192,15 @@ abstract class Repository
       * @param  string   $value
       * @return Model
       */
-     public function update($id, $key, $value)
+     public function update($id, $key, $value=null)
      {
          $model =  $this->model->find($id);
-         $model->{$key}= $value;
+
+         if (is_array($key))
+             $model->update($key);
+         else
+             $model->{$key}= $value;
+
          $model->save();
      }
 
