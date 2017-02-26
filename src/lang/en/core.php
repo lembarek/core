@@ -1,4 +1,4 @@
 <?php
 return [
-    'site_name': 'site name',
+    'site_name' => 'site name',
 ];

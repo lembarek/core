@@ -9,13 +9,16 @@
 
 <body>
 <div class="container">
-    @include('core::layout.partials.navigation')
 
-    @include('core::layout.partials.flash')
+      @include('core::layout.partials.navigation')
 
-    @yield('content')
+      @include('core::layout.partials.flash')
 
-    @include('core::layout.partials.footer')
+    <div id="app">
+      @yield('content')
+    </div>
+
+      @include('core::layout.partials.footer')
 
     @yield('script')
 </div>
