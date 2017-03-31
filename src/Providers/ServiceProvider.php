@@ -14,11 +14,8 @@ abstract class ServiceProvider extends MainServiceProvider
     */
     public function fullBoot($package, $dir)
     {
-        if (file_exists($dir.'/routes.php')) {
-            if (! $this->app->routesAreCached()) {
-                require $dir.'/routes.php';
-            }
-        }
+        $this->mapRoutes($dir);
+
 
        if (file_exists($dir.'/views')) {
             $this->loadViewsFrom($dir.'/views', $package);
@@ -72,4 +69,23 @@ abstract class ServiceProvider extends MainServiceProvider
         }
 
     }
+
+    /**
+     * Define the routes for the application.
+     *
+     * @return void
+     */
+    public function mapRoutes($dir)
+    {
+      $files = ['api', 'channels', 'console', 'web'];
+
+      if (file_exists($dir.'/routes')) {
+        foreach($files as $file){
+          if(file_exists($dir.'/routes/'.$file.'.php'))
+            include_once($dir.'/routes/'.$file.'.php');
+        }
+      }
+
+    }
+
 }
