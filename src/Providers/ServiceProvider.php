@@ -77,12 +77,13 @@ abstract class ServiceProvider extends MainServiceProvider
      */
     public function mapRoutes($dir)
     {
-      $files = ['api', 'channels', 'console', 'web'];
+      $dir = $dir.'routes';
 
-      if (file_exists($dir.'/routes')) {
+      if (file_exists($dir)) {
+        $files = glob($dir . '/*.php');
         foreach($files as $file){
-          if(file_exists($dir.'/routes/'.$file.'.php'))
-            include_once($dir.'/routes/'.$file.'.php');
+          if(file_exists($file))
+            require($file);
         }
       }
 
